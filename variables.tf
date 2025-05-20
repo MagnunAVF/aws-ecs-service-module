@@ -42,3 +42,8 @@ variable "service_listener" {
   type        = string
   description = "ARN of the Application Load Balancer listener that will be used by the service."
 }
+
+variable "service_task_execution_role" {
+  type        = string
+  description = "ARN of the ECS task execution role that the service will use to run."
+}
