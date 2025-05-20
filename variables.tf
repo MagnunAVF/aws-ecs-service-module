@@ -48,6 +48,16 @@ variable "service_task_execution_role" {
   description = "ARN of the ECS task execution role that the service will use to run."
 }
 
+variable "service_launch_type" {
+  type        = string
+  description = "Launch type for the ECS service, such as 'FARGATE' or 'EC2'."
+}
+
+variable "service_task_count" {
+  type        = number
+  description = "Number of task instances to be run simultaneously in the service."
+}
+
 variable "service_healthcheck" {
   type        = map(any)
   description = "Service health check configuration, including path and protocol."
