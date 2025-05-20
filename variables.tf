@@ -48,6 +48,11 @@ variable "service_task_execution_role" {
   description = "ARN of the ECS task execution role that the service will use to run."
 }
 
+variable "service_healthcheck" {
+  type        = map(any)
+  description = "Service health check configuration, including path and protocol."
+}
+
 variable "environment_variables" {
   type        = list(map(string))
   description = "List of environment variables that will be passed to the service."
