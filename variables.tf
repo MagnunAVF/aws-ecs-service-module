@@ -58,6 +58,11 @@ variable "service_task_count" {
   description = "Number of task instances to be run simultaneously in the service."
 }
 
+variable "service_hosts" {
+  type        = list(string)
+  description = "List of hosts associated with the service, typically specified for DNS configurations."
+}
+
 variable "service_healthcheck" {
   type        = map(any)
   description = "Service health check configuration, including path and protocol."
