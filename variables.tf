@@ -47,3 +47,13 @@ variable "service_task_execution_role" {
   type        = string
   description = "ARN of the ECS task execution role that the service will use to run."
 }
+
+variable "environment_variables" {
+  type        = list(map(string))
+  description = "List of environment variables that will be passed to the service."
+}
+
+variable "capabilities" {
+  type        = list(string)
+  description = "List of capabilities needed for service execution, such as 'CAP_SYS_ADMIN' for specific Linux resources."
+}
