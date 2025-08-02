@@ -167,3 +167,13 @@ variable "scale_tracking_cpu" {
   type        = number
   description = "Target CPU utilization value for scale tracking, in percentage."
 }
+
+variable "alb_arn" {
+  type        = string
+  description = "ARN of the Application Load Balancer used for request tracking."
+}
+
+variable "scale_tracking_requests" {
+  type        = number
+  description = "Target number of requests per second (TPS) for scale tracking."
+}
