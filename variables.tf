@@ -81,99 +81,119 @@ variable "capabilities" {
 variable "scale_type" {
   type        = string
   description = "Type of scalability, such as 'cpu', 'cpu_tracking' or 'requests_tracking'."
+  default     = null
 }
 
 variable "task_minimum" {
   type        = number
   description = "Minimum number of tasks that should be run by the service."
+  default = 3
 }
 
 variable "task_maximum" {
   type        = number
   description = "Maximum number of tasks that can be run by the service."
+  default = 10
 }
 
 variable "scale_out_cpu_threshold" {
   type        = number
   description = "CPU utilization threshold value that, when exceeded, triggers a scale-out action, in percentage."
+  default = 80
 }
 
 variable "scale_out_adjustment" {
   type        = number
   description = "Number of tasks to add during a scale-out action."
+  default = 1
 }
 
 variable "scale_out_comparison_operator" {
   type        = string
   description = "Comparison operator used for the scale-out condition, such as 'GreaterThanOrEqualToThreshold'."
+  default = "GreaterThanOrEqualToThreshold"
 }
 
 variable "scale_out_statistic" {
   type        = string
   description = "Statistic used for the scale-out condition, such as 'Average' or 'Sum'."
+  default = "Average"
 }
 
 variable "scale_out_period" {
   type        = number
   description = "Duration of the evaluation period for scale-out, in seconds."
+  default = 60
 }
 
 variable "scale_out_evaluation_periods" {
   type        = number
   description = "Number of evaluation periods required to trigger a scale-out action."
+  default = 2
 }
 
 variable "scale_out_cooldown" {
   type        = number
   description = "Cooldown period after a scale-out action, in seconds."
+  default = 60
 }
 
 variable "scale_in_cpu_threshold" {
   type        = number
   description = "CPU utilization threshold value that, when below, triggers a scale-in action, in percentage."
+  default = 30
 }
 
 variable "scale_in_adjustment" {
   type        = number
   description = "Number of tasks to reduce during a scale-in action."
+  default = -1
 }
 
 variable "scale_in_comparison_operator" {
   type        = string
   description = "Comparison operator used for the scale-in condition, such as 'LessThanOrEqualToThreshold'."
+  default = "LessThanOrEqualToThreshold"
 }
 
 variable "scale_in_statistic" {
   type        = string
   description = "Statistic used for the scale-in condition, such as 'Average' or 'Sum'."
+  default = "Average"
 }
 
 variable "scale_in_period" {
   type        = number
   description = "Duration of the evaluation period for scale-in, in seconds."
+  default = 120
 }
 
 variable "scale_in_evaluation_periods" {
   type        = number
   description = "Number of evaluation periods required to trigger a scale-in action."
+  default = 3
 }
 
 variable "scale_in_cooldown" {
   type        = number
   description = "Cooldown period after a scale-in action, in seconds."
+  default = 120
 }
 
 variable "scale_tracking_cpu" {
   type        = number
   description = "Target CPU utilization value for scale tracking, in percentage."
+  default = 80
 }
 
 variable "alb_arn" {
   type        = string
   description = "ARN of the Application Load Balancer used for request tracking."
+  default = null
 }
 
 variable "scale_tracking_requests" {
   type        = number
   description = "Target number of requests per second (TPS) for scale tracking."
+  default = 0
 }
