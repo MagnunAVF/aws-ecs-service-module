@@ -162,3 +162,8 @@ variable "scale_in_cooldown" {
   type        = number
   description = "Cooldown period after a scale-in action, in seconds."
 }
+
+variable "scale_tracking_cpu" {
+  type        = number
+  description = "Target CPU utilization value for scale tracking, in percentage."
+}
