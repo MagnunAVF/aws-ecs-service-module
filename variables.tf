@@ -81,8 +81,21 @@ variable "service_healthcheck" {
 }
 
 variable "environment_variables" {
-  type        = list(map(string))
+  type = list(object({
+    name : string
+    value : string
+  }))
   description = "List of environment variables that will be passed to the service."
+  default     = []
+}
+
+variable "secrets" {
+  type = list(object({
+    name : string
+    valueFrom : string
+  }))
+  description = "List of secrets from parameter store or secrets manager"
+  default     = []
 }
 
 variable "capabilities" {
